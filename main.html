@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main_stylesheet.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="title">Sentiment Analysis</div>
+        <nav class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('feedback') }}">Feedback</a>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="twitter-button">
+            <img src="{{ url_for('static', filename='images/mainpage_icon.webp') }}" alt="Twitter Logo">
+        </div>
+
+        <div class="input-container" id="inputContainer">
+            <div class="input-options">
+                <label>
+                    <button onclick="toggleInputBox('text')">Input Text</button>
+                </label>
+                <label>
+                    <button onclick="toggleInputBox('username')">Username</button>
+                </label>
+            </div>
+            <div class="input-box" id="textInputBox">
+                <input type="text" placeholder="Enter text here" id="inputText">
+            </div>
+            <div class="input-box" id="usernameInputBox">
+                <input type="text" placeholder="Enter username here" id="username">
+            </div>
+            <button class="analyze-button" onclick="analyzeInput()">Analyze</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function toggleInputBox(type) {
+            const textInputBox = document.getElementById('textInputBox');
+            const usernameInputBox = document.getElementById('usernameInputBox');
+
+            if (type === 'text') {
+                textInputBox.style.display = 'block';
+                usernameInputBox.style.display = 'none';
+            } else if (type === 'username') {
+                textInputBox.style.display = 'none';
+                usernameInputBox.style.display = 'block';
+            }
+        }
+
+        function analyzeInput() {
+            const inputText = document.getElementById('inputText').value;
+            const username = document.getElementById('username').value;
+
+            $.ajax({
+                url: '/analyze',
+                type: 'POST',
+                data: {
+                    input_text: inputText,
+                    username: username
+                },
+                success: function(response) {
+                    if (response.sentiment) {
+                        document.getElementById('result').innerHTML = `<h3>Sentiment: ${response.sentiment}</h3>`;
+                    } else {
+                        document.getElementById('result').innerHTML = `<h3>${response.error}</h3>`;
+                    }
+                },
+                error: function() {
+                    alert("Error occurred while processing.");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

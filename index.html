@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_stylesheet.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="title">Sentiment Analysis</div>
+        <nav class="nav-links">
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('signup') }}">Signup</a>
+            <a href="{{ url_for('feedback') }}">Feedback</a>
+        </nav>
+    </header>
+
+    <div class="home-container">
+        <p>Welcome to<br>Sentiment Analysis</p>
+
+        <img src="{{ url_for('static', filename='images/index page emoji/emoji7.png') }}">
+        <img src="{{ url_for('static', filename='images/index page emoji/emoji1.png') }}" class="position">
+        <img src="{{ url_for('static', filename='images/index page emoji/emoji2.png') }}" class="positiona">
+        <img src="{{ url_for('static', filename='images/index page emoji/emoji3.gif') }}" class="positionb">
+        <img src="{{ url_for('static', filename='images/index page emoji/emoji4.png') }}" class="positionc">
+        <img src="{{ url_for('static', filename='images/index page emoji/emoji5.png') }}" class="positiond">
+        <img src="{{ url_for('static', filename='images/index page emoji/emoji6.png') }}" class="positione">
+    </div>
+</body>
+</html>

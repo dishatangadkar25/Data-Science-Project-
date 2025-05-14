@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='feedback_stylesheet.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="title">Sentiment Analysis</div>
+        <nav class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a>
+        </nav>
+    </header>
+
+    <div class="feedback-container">
+        <h2><u>Your Feedback</u></h2>
+        <p>We would like your feedback to improve our website.</p>
+
+        <form action="{{ url_for('index') }}" method="get">
+            <label for="opinion">What is your opinion of Our page?</label>
+            <select id="opinion" name="opinion">
+                <option value="very-satisfied" selected>😃 Very satisfied</option>
+                <option value="satisfied">😊 Satisfied</option>
+                <option value="neutral">😐 Neutral</option>
+                <option value="dissatisfied">😢 Dissatisfied</option>
+                <option value="very-dissatisfied">😞 Very dissatisfied</option>
+            </select>
+
+            <br><br>
+
+            <label for="category">Please select your feedback category:</label>
+            <select id="category" name="category">
+                <option value="suggestion" selected>Suggestion</option>
+                <option value="issue">Something is not quite right</option>
+                <option value="compliment">Compliment</option>
+            </select>
+
+            <br><br>
+
+            <label for="feedback">Please leave your feedback below:</label>
+            <textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Enter your feedback here..."></textarea>
+            <br><br>
+            <button type="Submit" class="submit-button">Send</button>
+        </form>
+    </div>
+
+</body>
+</html>

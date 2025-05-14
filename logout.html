@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="title">Sentiment Analysis</div>
+        <nav class="nav-links">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('signup') }}">Signup</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </nav>
+    </header>
+
+    <div class="logout-container">
+        <h2>Logout</h2>
+        <p><b>Are you sure you want to log out?</b></p>
+        <form action="{{ url_for('logout') }}" method="post">
+            <button type="submit">Yes, Logout</button>
+        </form>
+    </div>
+
+</body>
+</html>
