@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    background-image: url('/static/images/forgot_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 70px;
+    background-color: transparent;
+}
+
+.navbar .title {
+    font-size: 80px;
+    font-weight: bold;
+    color: black;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 60px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 80px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #1da1f2;
+}
+
+/* Forgot Password Container */
+.forgot-container {
+    background-color: #fff;
+    padding: 110px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    width: 1200px;
+    height: 1100px;
+    margin: 500px auto;
+    margin-left: 2400px;
+    margin-top: 800px;
+}
+
+.forgot-container h2 {
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 50px;
+}
+
+.forgot-container h3 {
+    text-align: center;
+    font-size: 50px;
+    color: #ccc;
+    margin-bottom: 50px;
+}
+
+.forgot-container input[type="email"],
+.forgot-container input[type="password"] {
+    width: 100%;
+    padding: 20px;
+    height: 40px;
+    margin: 40px 0;
+    font-size: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.forgot-container button {
+    width: 100%;
+    padding: 40px;
+    margin: 20px;
+    font-size: 50px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.forgot-container button:hover {
+    background-color: #555;
+}
+
+.forgot-container p {
+    color: black;
+    font-size: 50px;
+    text-align: center;
+}
+
+.forgot-container p a {
+    color: blue;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+/* Positioning Images */
+.forgot-container .position {
+    height: 500px;
+    position: absolute;
+    top: 700px;
+    right: 1500px;
+}
+
+.forgot-container .positiona {
+    height: 800px;
+    position: absolute;
+    top: 900px;
+    left: 1300px;
+}
+
+.forgot-container .positionb {
+    height: 800px;
+    background-color: transparent;
+    position: absolute;
+    top: 1500px;
+    left: 3700px;
+}
+
+.forgot-container .positionc {
+    height: 800px;
+    background-color: transparent;
+    position: absolute;
+    top: 1700px;
+    left: 700px;
+}
+
+.forgot-container .positiond {
+    height: 700px;
+    background-color: transparent;
+    position: absolute;
+    top: 200px;
+    left: 2900px;
+}
