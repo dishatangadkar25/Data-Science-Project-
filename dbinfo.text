@@ -1,0 +1,46 @@
+####
+CREATE DATABASE Sentiment_analysis;
+
+use Sentiment_analysis;
+
+##
+
+mysql> describe users;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| id             | int          | NO   | PRI | NULL    | auto_increment |
+| name           | varchar(255) | NO   |     | NULL    |                |
+| contact_number | varchar(20)  | NO   |     | NULL    |                |
+| email          | varchar(255) | NO   | UNI | NULL    |                |
+| birth_date     | date         | NO   |     | NULL    |                |
+| username       | varchar(50)  | NO   | UNI | NULL    |                |
+| password       | varchar(255) | NO   |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.04 sec)
+
+select * from users;
+
+-------------------------
+1)feedback
+CREATE TABLE feedback (
+    feedback_id INT AUTO_INCREMENT PRIMARY KEY,
+    opinion ENUM('very-satisfied', 'satisfied', 'neutral', 'dissatisfied', 'very-dissatisfied') NOT NULL,
+    category ENUM('suggestion', 'issue', 'compliment') NOT NULL,
+    feedback_text TEXT NOT NULL,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+describe  feedback;
+
+select * from feedback;
+
+#-----------------------use of flask
+
+pack the in template 
+
+cd "C:\Users\gawal\OneDrive\Desktop\Sentiment Analysis Project"
+
+python app.py
+
+http://127.0.0.1:5000/
